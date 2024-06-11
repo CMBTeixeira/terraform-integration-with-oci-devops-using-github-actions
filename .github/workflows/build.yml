@@ -4,7 +4,7 @@ name: oci-resource-manager-build-demo
 on:
   push:
     branches:
-      - main
+      - feature/launch-infrastructure
 jobs:
   build-resource-manager:
     name: Build Resource Manager
@@ -12,8 +12,8 @@ jobs:
     env: 
         STACK_NAME: "cmbt-stack-github"
         PROVIDER_NAME: "GitHub Source Provider"
-        BRANCH_NAME: "main"
-        REPO_URL: "https://github.com/CMBTeixeira/oci-devops-integrate-terraform"
+        BRANCH_NAME: "feature/launch-infrastructure"
+        REPO_URL: "https://github.com/CMBTeixeira/terraform-integration-with-oci-devops-using-github-actions"
         TF_VERSION: "0.13.x"
         REGION: "uk-london-1"
         BUCKET_NAME: "cmbt-bucket-github"
