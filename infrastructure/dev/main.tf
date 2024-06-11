@@ -35,7 +35,7 @@ resource "oci_core_vcn" "vcn_3" { #LINK https://registry.terraform.io/providers/
 
 resource "oci_identity_dynamic_group" "dynamic_group_1" { #LINK - https://registry.terraform.io/providers/oracle/oci/latest/docs/resources/identity_dynamic_group
   #   provider       = oci.region
-  name           = "dynamyc_group_random"
+  name           = "dynamyc_group_random-github"
   compartment_id = local.tenancy_ocid
   description    = "just to test"
   matching_rule  = "All {resource.compartment.id = '${local.cmbt_testing_compartment_id}', Any {resource.type = 'devopsdeploypipeline', resource.type = 'devopsbuildpipeline', resource.type = 'devopsrepository', resource.type = 'devopsconnection', resource.type = 'devopstrigger'}}"
@@ -47,7 +47,7 @@ resource "oci_identity_dynamic_group" "dynamic_group_1" { #LINK - https://regist
 
 resource "oci_identity_policy" "recommended_policy_1" {
   depends_on     = [oci_identity_dynamic_group.dynamic_group_1]
-  name           = "recommended_policy_1"
+  name           = "recommended_policy_1-github"
   description    = "Recommended policies while creating the building pipeline in OCI DevOps. Core policies for managed build pipeline stage type."
   compartment_id = local.cmbt_testing_compartment_id
   statements = [
@@ -60,7 +60,7 @@ resource "oci_identity_policy" "recommended_policy_1" {
 
 resource "oci_identity_policy" "recommended_policy_2" {
   depends_on     = [oci_identity_dynamic_group.dynamic_group_1]
-  name           = "recommended_policy_2"
+  name           = "recommended_policy_2-github"
   description    = "Recommended policies while creating the building pipeline in OCI DevOps. Policies for VCN connection for managed build pipeline stage type."
   compartment_id = local.cmbt_testing_compartment_id
   statements = [
@@ -72,7 +72,7 @@ resource "oci_identity_policy" "recommended_policy_2" {
 
 resource "oci_identity_policy" "recommended_policy_3" {
   depends_on     = [oci_identity_dynamic_group.dynamic_group_1]
-  name           = "recommended_policy_3"
+  name           = "recommended_policy_3-github"
   description    = "Recommended policies while creating the building pipeline in OCI DevOps. Policies for NSGs connection for managed build pipeline stage type."
   compartment_id = local.cmbt_testing_compartment_id
   statements = [
@@ -83,7 +83,7 @@ resource "oci_identity_policy" "recommended_policy_3" {
 
 resource "oci_identity_policy" "recommended_policy_4" { #LINK - https://medium.com/@xsgdkh/infrastructure-provisioning-using-oci-devops-resource-manager-1e8a74d02a70
   depends_on     = [oci_identity_dynamic_group.dynamic_group_1]
-  name           = "recommended_policy_4"
+  name           = "recommended_policy_4-github"
   description    = "Recommended policies while creating the building pipeline in OCI DevOps. from this link: https://medium.com/@xsgdkh/infrastructure-provisioning-using-oci-devops-resource-manager-1e8a74d02a70 ."
   compartment_id = local.cmbt_testing_compartment_id
   statements = [
@@ -94,7 +94,7 @@ resource "oci_identity_policy" "recommended_policy_4" { #LINK - https://medium.c
 
 resource "oci_identity_policy" "recommended_tenancy_policy_1" {
   depends_on     = [oci_identity_dynamic_group.dynamic_group_1]
-  name           = "recommended_tenancy_policy_1"
+  name           = "recommended_tenancy_policy_1-github"
   description    = "Recommended policies while creating the building pipeline in OCI DevOps. Allow Dynamic Group to read secrett-family tenancy and to read DevOps family in ${local.cmbt_testing_compartment_name} compartment."
   compartment_id = local.tenancy_ocid
   statements = [
