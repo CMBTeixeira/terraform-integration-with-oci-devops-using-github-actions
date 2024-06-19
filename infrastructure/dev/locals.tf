@@ -4,7 +4,7 @@ locals {
   cmbt_testing_compartment_id   = "ocid1.compartment.oc1..aaaaaaaa7wiqnzbask76wdcufdwkglknslhaxfujnrnz5z7c72pvkg5t4cqa"
   fingerprint                   = "42:e2:da:e6:70:52:a8:d1:fe:30:69:86:fd:91:b9:64"
   private_key_path              = "../../../private_key/cmbt1984@gmail.com_2024-06-04T15_52_21.891Z.pem"
-  cmbt_testing_compartment_name = "cmbt-testing-compartment"
+  cmbt_testing_compartment_name = "cmbt-compartment-for-github-actions-deployment"
   project_id                    = "ocid1.devopsproject.oc1.uk-london-1.amaaaaaaqmuekxaaqtij65gu4rcbdggcba32nt3snpxcocvgjkl32kd7wzpa"
   account_namespace             = "lr8wi8ngkuui"
 }
