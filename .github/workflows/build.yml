@@ -1,5 +1,5 @@
 #NOTE - This YAML file is to be used on GitHub Actions, not in OCI Pipelines!
-
+#Note - just to test
 name: oci-resource-manager-build-demo
 on:
   push:
